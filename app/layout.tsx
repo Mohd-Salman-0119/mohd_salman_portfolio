@@ -13,8 +13,8 @@ export const metadata = {
   title: "Mohd Salman - Full-Stack Web Developer",
   icons: {
     icon: [
-      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon.jpeg", sizes: "32x32", type: "image/jpeg" },
+      { url: "/favicon.jpeg", sizes: "16x16", type: "image/jpeg" },
     ],
   },
   description:
