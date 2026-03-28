@@ -113,7 +113,7 @@ export default function MainNavbar() {
         {/* MOBILE TOGGLE */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden text-white hover:text-yellow-500 border border-red-400 p-2 rounded-full bg-dark-3/50 backdrop-blur"
+          className="md:hidden text-white hover:text-yellow-500 p-2 rounded-full bg-dark-3/50 backdrop-blur"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
