@@ -52,7 +52,7 @@ export default function DeveloperHero() {
 
           {/* LEFT CONTENT */}
           <ScrollReveal className="order-2 md:order-1" duration={1000}>
-            <div className="glass p-6 sm:p-10 rounded-2xl animated-border border border-yellow-500/30">
+            <div className="glass p-6 sm:p-10 rounded-2xl border border-yellow-500/30 transition-all duration-500 hover:shadow-lg hover:shadow-yellow-500/10">
 
               {/* Role tag */}
               <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-yellow-400 bg-yellow-500/10 border border-yellow-500/30 rounded-full px-3 py-1 mb-5">
