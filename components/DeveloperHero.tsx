@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, MapPin, Sparkles, Briefcase } from "lucide-react"
+import { ArrowRight, MapPin, Sparkles, Briefcase, Download, Mail } from "lucide-react"
 import dynamic from "next/dynamic"
 import { Button } from "@/components/ui/button"
 import ScrollReveal from "./ScrollReveal"
@@ -13,6 +13,7 @@ const AnimatedBackground = dynamic(() => import("./AnimatedBackground"), {
     <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-black" />
   ),
 })
+
 export default function DeveloperHero() {
   return (
     <section className="relative text-white py-20 overflow-hidden min-h-[90vh] flex items-center w-full">
@@ -25,13 +26,12 @@ export default function DeveloperHero() {
         <AnimatedBackground />
       </div>
 
-      {/* ── Open to Work — top floating banner, one place only ── */}
+      {/* ── Open to Work — top floating banner ── */}
       <div className="absolute top-6 left-1/2 -translate-x-1/2 z-20">
         <div
           className="flex items-center gap-3 px-5 py-2.5 rounded-full border border-green-500/50 bg-gray-900/80 backdrop-blur-md"
           style={{ animation: "otw-glow 3s ease-in-out infinite" }}
         >
-          {/* Pulsing dot */}
           <span className="relative flex h-2.5 w-2.5 shrink-0">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-70" />
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400" />
@@ -81,8 +81,10 @@ export default function DeveloperHero() {
                 user-focused solutions that make an impact.
               </p>
 
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+              {/* ── CTA Buttons ── */}
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+
+                {/* 1. View My Work — primary, unchanged */}
                 <Button
                   asChild
                   className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 font-bold hover:from-yellow-400 hover:to-yellow-500 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-yellow-500/20 rounded-full px-8 py-6 group"
@@ -93,13 +95,34 @@ export default function DeveloperHero() {
                   </Link>
                 </Button>
 
+                {/* 2. Hire Me — replaces Contact Me, accent outline */}
                 <Button
                   asChild
                   variant="outline"
-                  className="border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-gray-900 transition-all duration-300 transform hover:scale-105 rounded-full px-8 py-6"
+                  className="border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-gray-900 transition-all duration-300 transform hover:scale-105 rounded-full px-8 py-6 group"
                 >
-                  <Link href="#contact">Contact Me</Link>
+                  <Link href="#contact">
+                    <Mail className="mr-2 w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
+                    Hire Me
+                  </Link>
                 </Button>
+
+                {/* 3. Download CV — ghost style, subtle */}
+                <Button
+                  asChild
+                  variant="ghost"
+                  className="text-gray-300 hover:text-yellow-400 hover:bg-yellow-500/10 border border-gray-700 hover:border-yellow-500/50 transition-all duration-300 transform hover:scale-105 rounded-full px-8 py-6 group"
+                >
+                  {/*
+                    Replace href with your actual CV file path, e.g. "/resume/salman-cv.pdf"
+                    The download attribute triggers a file download instead of navigation.
+                  */}
+                  <a href="/resume/salman-cv.pdf" download="Mohd_Salman_CV.pdf">
+                    <Download className="mr-2 w-4 h-4 group-hover:translate-y-0.5 transition-transform duration-200" />
+                    Download CV
+                  </a>
+                </Button>
+
               </div>
             </div>
           </ScrollReveal>
@@ -110,7 +133,6 @@ export default function DeveloperHero() {
             duration={1000}
             delay={200}
           >
-            {/* Extra margin so floating cards aren't clipped */}
             <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 mt-8 mb-8 mx-8">
 
               {/* Glow behind avatar */}
@@ -134,7 +156,7 @@ export default function DeveloperHero() {
                 />
               </div>
 
-              {/* ── Experience Card — floating on avatar, bottom-right ── */}
+              {/* Experience Card */}
               <div className="absolute -bottom-5 -right-5 bg-gray-900 px-4 py-3 rounded-xl border border-yellow-500/50 shadow-lg shadow-yellow-500/10 text-center min-w-[90px]">
                 <div className="text-yellow-500 font-bold text-base leading-none">3+ Years</div>
                 <div className="text-gray-400 text-xs font-medium mt-1">Experience</div>

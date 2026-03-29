@@ -37,7 +37,7 @@ export default function Footer() {
               </p>
 
               {/* SOCIAL */}
-              <div className="flex space-x-3 mt-4">
+              {/* <div className="flex space-x-3 mt-4">
                 <a
                   href={SOCIAL_LINKS.github}
                   target="_blank"
@@ -52,7 +52,7 @@ export default function Footer() {
                 >
                   <LuLinkedin className="text-gray-300 group-hover:text-black" />
                 </a>
-              </div>
+              </div> */}
             </div>
           </ScrollReveal>
 
